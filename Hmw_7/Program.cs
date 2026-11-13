@@ -1,19 +1,26 @@
 ﻿using System;
+using System.IO;
 
 class Program
 {
-
-    public static string Reverse(string input)
+    static void Main(string[] args)
     {
-        char [] chars = input.ToCharArray();
-        Array.Reverse(chars);
+        string filePath = Console.ReadLine();
+        string file = "output";
+        if (File.Exists(filePath))
+        {
+            string content = File.ReadAllText(filePath);
+            content = content.ToUpper();
+            File.WriteAllText(file, content);
 
-        return new string (chars);
-    }
-    public static void Main(string[] args)
-    {
+        }
 
-        string r = "Heeloo";
-        Console.WriteLine(Reverse(r));
+        else
+        {
+            Console.WriteLine("File not found.");
+        }
+
+
+
     }
 }
