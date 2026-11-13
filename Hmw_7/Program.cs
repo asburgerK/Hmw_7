@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
         string filePath = Console.ReadLine();
-        string file = "output";
+        string file = "output.txt";
         if (File.Exists(filePath))
         {
             string content = File.ReadAllText(filePath);
