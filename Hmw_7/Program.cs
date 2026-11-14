@@ -3,7 +3,7 @@ using System.IO;
 
 class Program
 {
-    public static void SearchMail(ref string s)
+    public  void SearchMail(ref string s)
     {
         int sharpIndex = s.IndexOf('#');
         if (sharpIndex > 0 && sharpIndex < s.Length - 1)
@@ -18,10 +18,12 @@ class Program
         string[] readLines = File.ReadAllLines(filePath);
         string[] emails = new string[readLines.Length];
 
+        Program program = new Program();
+
         for (int i = 0; i < readLines.Length; i++)
         {
             string line = readLines[i];
-            SearchMail(ref line);
+            program.SearchMail(ref line);
             emails[i] = line;
         }
 
